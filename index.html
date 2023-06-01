@@ -1,0 +1,33 @@
+---
+title: LGBTQ+ Border Maker
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ page.title }} | ApathyHill</title>
+        <meta charset="UTF-8">
+        <meta name="og:title" content="{{ page.title }}">
+        <meta name="og:site_name" content="ApathyHill">
+        <meta name="theme-color" content="#3fbfbf"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+        <link rel="stylesheet" type="text/css" href="./assets/styles/main.css">
+        <script type="text/javascript" src="./assets/scripts/index.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <canvas id="avatar" class="circle"></canvas>
+            <div id="flag-name"></div>
+            <div id="flags">
+                {% for flag in site.flags %}
+                    <img class="flag circle" src="./assets/images/flags/{{ flag.filename }}.png" data-name="{{ flag.name }}">
+                {% endfor %}
+            </div>
+            <div id="buttons">
+                <button id="button-load" onclick="fileUpload()">Load Image</button>
+                <button id="button-save" onclick="fileSave()">Save Image</button>
+            </div>
+        </div>
+    </body>
+</html>

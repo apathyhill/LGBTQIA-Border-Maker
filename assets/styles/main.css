@@ -1,0 +1,114 @@
+:root {
+    font-size: 1vmin;
+    font-family: sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #dfbfdf;
+}
+
+#content {
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100vmin;
+    height: 100vmin;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+    align-items: center;
+    align-content: center;
+
+
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+#avatar {
+    flex-basis: 60%;
+    overflow: hidden;
+    object-fit: contain;
+    box-shadow: 0 0 1rem black;
+    background-color: black;
+}
+
+#flags {
+    align-self: stretch;
+    flex-basis: 20%;
+    box-sizing: border-box;
+    position:relative;
+    box-sizing: border-box;
+    overflow: scroll;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.flag {
+    height: 100%;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    box-shadow: 0 0 1rem black;
+    image-rendering: crisp-edges;
+    border: 0 solid white;
+    transition: all 0.2s ease;
+}
+
+.flag:hover {
+   transform: scale(110%);
+}
+
+.flag-selected {
+    border-width: 1rem;
+}
+
+#flag-name {
+    flex-basis: 5%;
+    font-size: 4rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#buttons {
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-self: stretch;
+    gap: 10rem;
+}
+
+button {
+    align-self: center;
+    font-size: 4rem;
+    padding: 2rem;
+    background-color: #efdfef;
+    border-radius: 1rem;
+    box-shadow: 0 1rem rgba(191, 127, 191, 0.5);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+}

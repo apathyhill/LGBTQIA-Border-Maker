@@ -1,0 +1,34 @@
+flags:
+  -
+    name: "Agender"
+    filename: "agender"
+  -
+    name: "Aromantic"
+    filename: "aro"
+  -
+    name: "Asexual"
+    filename: "ace"
+  -
+    name: "Bisexual"
+    filename: "bi"
+  -
+    name: "Gay"
+    filename: "gay"
+  -
+    name: "Genderfluid"
+    filename: "genderfluid"
+  -
+    name: "Intersex"
+    filename: "intersex"
+  -
+    name: "Lesbian"
+    filename: "lesbian"
+  -
+    name: "Non-Binary"
+    filename: "nb"
+  -
+    name: "Pansexual"
+    filename: "pan"
+  -
+    name: "Transgender"
+    filename: "trans"
