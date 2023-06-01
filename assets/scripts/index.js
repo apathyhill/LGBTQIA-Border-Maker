@@ -32,9 +32,10 @@ function flagOver(event) {
 }
 // Flag setup: Add events to flags
 function flagSetup() {
+    console.log("[FLAGS] Setting up flags...");
+
     let flags = document.getElementsByClassName("flag");
     flagName = document.getElementById("flag-name");
-    console.log(flags);
     for (let flag of flags) {
         flag.addEventListener("click", flagSelect);
         flag.addEventListener("mouseover", flagOver);
@@ -56,6 +57,8 @@ imgAvatar.addEventListener("load", function(event) {
 
 // Image Setup: Get canvas ready
 function imageSetup() {
+    console.log("[IMAGE] Getting image canvas...");
+
     canvas = document.getElementById("avatar");
     canvas.width = 1280;
     canvas.height = 1280;
@@ -99,6 +102,7 @@ function imageDraw() {
 	ctx.drawImage(imgAvatar, aviX, aviY, aviW, aviH);
 
     ctx.restore();
+    console.log("[IMAGE] Image drawn.");
 }
 
 /* FILES */
@@ -112,10 +116,12 @@ function fileUpload(e) {
     };
     input.click();
     input.remove();
+    console.log("[FILE] Uploading file...");
 }
 
 // Load file
 function fileLoad(file) {
+    console.log("[FILE] Loading file...");
     let reader = new FileReader();
     reader.addEventListener("load", function(event) {
         imgAvatar.src = event.target.result;
@@ -130,4 +136,5 @@ function fileSave() {
     a.href = canvas.toDataURL("image/png");
     a.click();
     a.remove();
+    console.log("[FILE] Saving file...");
 }
