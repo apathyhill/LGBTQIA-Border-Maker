@@ -7,12 +7,22 @@ window.addEventListener("load", function(event) {
 
 /* FLAGS */
 
-// Flag name
-let flagName;
+// Flag variables
+let flagName, flagSelected = [];
 
 // Flag selection event
 function flagSelect(event) {
-    event.target.classList.toggle("flag-selected");
+    let flag = event.target;
+    
+    // Insert / remove flag
+    let flagIndex = flagSelected.indexOf(flag);
+    if (flagIndex > -1) { flagSelected.splice(flagIndex, 1); }
+    else { flagSelected.push(flag); }
+
+    // Toggle flag
+    flag.classList.toggle("flag-selected");
+
+    // Redraw image
     imageDraw();
 }
 
@@ -40,6 +50,7 @@ let canvas, ctx;
 let imgAvatar = new Image();
 imgAvatar.crossOrigin = "anonymous";
 imgAvatar.addEventListener("load", function(event) {
+    // Redraw image
     imageDraw();
 });
 
@@ -56,13 +67,13 @@ function imageSetup() {
 function imageDraw() {
     ctx.save(); 
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Draw flags
     ctx.imageSmoothingEnabled = false;
-    let flagSelected = document.getElementsByClassName("flag-selected");
     let flagWidth = canvas.width / flagSelected.length;
-    Array.from(flagSelected).forEach(function(flag, i) { 
+    flagSelected.forEach(function(flag, i) { 
         ctx.drawImage(flag, flagWidth * i, 0, flagWidth, canvas.height);
     });
 
