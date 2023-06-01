@@ -127,9 +127,7 @@ function fileLoad(file) {
 function fileSave() {
     let a = document.createElement("a");
     a.download = "image.png";
-    console.log(a);
-    console.log(canvas.toDataURL("image/png"));
-    a.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    a.href = canvas.toDataURL("image/png");
     a.click();
     a.remove();
 }
